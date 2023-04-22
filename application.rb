@@ -13,10 +13,7 @@ class Application
     @io.puts "\nHow did it go?"
     @io.puts "Enter the number of pins your knocked down: "
     @throw_score = @io.gets.chomp.to_i
-    my_bowling_scorecard = Scorecard.new(@io, @throw_score)
-    my_bowling_scorecard.add_score
-    # @io.puts "Gutter Game - Don't worry, we've all had one!"
-    @io.puts "You are on frame #{my_bowling_scorecard.frame}"
+    
   end
 
 end
