@@ -1,6 +1,14 @@
 require 'frame'
 
 describe Frame do
+  context "frame added with one roll no bonuses" do
+    it "returns the running frame total as an integer" do
+      frame_1 = Frame.new
+      frame_1.add(4)
+    expect(frame_1.frame_total).to eq 4
+    end
+  end
+
   context "frame added with two rolls no bonuses" do
     it "returns one frame as an array" do
       frame_1 = Frame.new

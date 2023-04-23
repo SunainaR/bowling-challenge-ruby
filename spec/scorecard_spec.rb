@@ -1,6 +1,43 @@
 require 'scorecard'
 
 describe Scorecard do
+  context "Add 10 frames no bonuses" do
+    it 'returns the game total as integer' do
+      my_scorecard = Scorecard.new
+      n = 1
+      10.times do
+      # self.instance_variable_set("@frame_#{n}", Frame.new)
+      # "@frame_#{n}".add(0)
+      # "@frame_#{n}".add(2)
+      # my_scorecard.add("@frame_#{n}")
+      frame = Frame.new
+      frame.add(0)
+      frame.add(2)
+      my_scorecard.add(frame)
+      n=+1
+      end
+      expect(my_scorecard.game_total).to eq 20
+    end
+  end
+
+  context "Attempt to add 11 frames no bonuses" do
+    it 'returns an error' do
+      my_scorecard = Scorecard.new
+      n = 1
+      10.times do
+      frame = Frame.new
+      frame.add(0)
+      frame.add(2)
+      my_scorecard.add(frame)
+      n=+1
+      end
+      frame = Frame.new
+      frame.add(0)
+      frame.add(2)
+      expect{ my_scorecard.add(frame) }.to raise_error "Game End reached: Can't add more frames"
+    end
+  end
+
   context "for first two rolls and no bonuses" do
     it "return a list of frame objects" do
       my_scorecard = Scorecard.new

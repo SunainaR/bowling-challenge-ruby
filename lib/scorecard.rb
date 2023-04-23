@@ -6,7 +6,11 @@ class Scorecard
   end
 
   def add(frame)
-    @scorecard << frame
+    if @scorecard.length < 10
+      @scorecard << frame
+    else
+      fail "Game End reached: Can't add more frames"
+    end
   end
 
   def all
