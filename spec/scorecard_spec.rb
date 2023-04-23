@@ -6,10 +6,6 @@ describe Scorecard do
       my_scorecard = Scorecard.new
       n = 1
       10.times do
-      # self.instance_variable_set("@frame_#{n}", Frame.new)
-      # "@frame_#{n}".add(0)
-      # "@frame_#{n}".add(2)
-      # my_scorecard.add("@frame_#{n}")
       frame = Frame.new
       frame.add(0)
       frame.add(2)
@@ -34,7 +30,7 @@ describe Scorecard do
       frame = Frame.new
       frame.add(0)
       frame.add(2)
-      expect{ my_scorecard.add(frame) }.to raise_error "Game End reached: Can't add more frames"
+      expect{ my_scorecard.add(frame) }.to raise_error "Game End Reached: Can't add more frames."
     end
   end
 

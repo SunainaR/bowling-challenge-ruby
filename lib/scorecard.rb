@@ -9,7 +9,7 @@ class Scorecard
     if @scorecard.length < 10
       @scorecard << frame
     else
-      fail "Game End reached: Can't add more frames"
+      fail "Game End Reached: Can't add more frames."
     end
   end
 
