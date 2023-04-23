@@ -22,7 +22,7 @@ class Scorecard
     # Returns a list of all frame objects
   end
   
-  def search_by_frame_num(frame_id) # keyword is a string
+  def search_by_frame_num(frame_num) # keyword is a string
     # Returns a frame object based on frame_id
   end
 
@@ -38,7 +38,7 @@ class Frame
 
   end
 
-  def add(roll)
+  def add(roll) #rolls is an array of rolls
     # Adds a new roll to a frame
   end
 
@@ -56,9 +56,9 @@ class Frame
   end
 end
 
-# Roll can just be a struct for now
-class Roll < Struct.new(:roll_score)
-end
+# # Roll can just be a struct for now
+# class Roll < Struct.new(:roll_score)
+# end
 ```
 
 ## 3. Create Examples as Integration Tests
@@ -71,28 +71,12 @@ combinations that reflect the ways in which the system will be used._
 # Gets all frames
 my_scorecard = ScoreCard.new
 frame_1 = Frame.new
-roll_1 = Roll.new(0)
-roll_2 = Roll.new(0)
-frame_1.add(roll_1)
-frame_1.add(roll_2)
+frame_1.add([0,0])
 frame_2 = Frame.new
-roll_1 = Roll.new(0)
-roll_2 = Roll.new(0)
-frame_2.add(roll_1)
-frame_2.add(roll_2)
-
+frame_2.add([0,0])
 my_scorecard.add(frame_1)
 my_scorecard.add(frame_2)
 my_scorecard.all => [frame_1, frame_2]
-
-# Gets all tracks
-library = MusicLibrary.new
-track_1 = Track.new("Carte Blanche", "Veracocha")
-track_2 = Track.new("Synaesthesia", "The Thrillseekers")
-library.add(track_1)
-library.add(track_2)
-library.all # => [track_1, track_2]
-```
 
 ## 4. Create Examples as Unit Tests
 

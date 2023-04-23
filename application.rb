@@ -12,8 +12,8 @@ class Application
 
     @io.puts "\nHow did it go?"
     @io.puts "Enter the number of pins your knocked down: "
-    @throw_score = @io.gets.chomp.to_i
-    
+    @roll_score = @io.gets.chomp.to_i
+
   end
 
 end
