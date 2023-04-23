@@ -11,4 +11,9 @@ class Frame
   def all
     @frame
   end
+
+  def frame_total
+    @frame.sum
+  end
+  
 end
